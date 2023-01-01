@@ -6,8 +6,9 @@ dotenv.config();
 const recoverPasswordEmail = async (data) => {
     const { firstName, lastName, email, token } = data;
     const transport = nodemailer.createTransport({
-        host: "smtp.mailtrap.io",
-        port: 2525,
+        host: "smtp.gmail.com",
+        port: 465,
+        secure: true,
         auth: {
             user: process.env.MAIL_USER,
             pass: process.env.MAIL_PASSWORD
