@@ -6,8 +6,8 @@ const usersRoutes = require("./routes/users.routes");
 const tasksRoutes = require("./routes/tasks.routes");
 const app = express();
 
-app.use(express.json());
 app.use(cors());
+app.use(express.json());
 
 initModels();
 
