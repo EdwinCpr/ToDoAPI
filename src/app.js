@@ -15,14 +15,14 @@ db.authenticate()
     .then(() => console.log("Autenticacion exitosa"))
     .catch((error) => console.log(error));
 
-db.sync()
+db.sync({ force: false })
     .then(() => console.log("Sincronizacion exitosa"))
     .catch((error) => console.log(error));
 
 app.use("/api/v1", usersRoutes);
 app.use("/api/v1", tasksRoutes);
 
-app.use("/", (req, res) => {
+app.get("/", (req, res) => {
     console.log("Corriendo");
     res.json("Corriendo");
 });

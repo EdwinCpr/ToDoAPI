@@ -1,6 +1,7 @@
-const dotenv = require("dotenv");
 const jwt = require("jsonwebtoken");
 const Users = require("../models/users.models");
+
+require("dotenv").config();
 
 const chechAuth = async (req, res, next) => {
     let token;

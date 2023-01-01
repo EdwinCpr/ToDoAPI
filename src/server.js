@@ -1,7 +1,10 @@
 const app = require("./app");
-const dotenv = require("dotenv");
 const PORT = process.env.PORT;
 
-dotenv.config();
+require("dotenv").config();
 
-app.listen(PORT);
+const server = app.listen(PORT, () => {
+    console.log(`App corriendo en el puerto ${PORT}`)
+});
+
+module.exports = server;

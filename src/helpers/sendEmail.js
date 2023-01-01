@@ -1,7 +1,6 @@
 const nodemailer = require("nodemailer");
-const dotenv = require("dotenv");
 
-dotenv.config();
+require("dotenv").config();
 
 const recoverPasswordEmail = async (data) => {
     const { firstName, lastName, email, token } = data;
