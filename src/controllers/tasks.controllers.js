@@ -6,7 +6,7 @@ const create = async (req, res) => {
 
     try {
         const task = await Tasks.create(newTask);
-        res.status(201).json(task);
+        res.status(201).json({msg: "Tarea creada exitosamente" });
     } catch (error) {
         console.log(error);
     };
@@ -41,7 +41,7 @@ const edit = async (req, res) => {
             completed: completed || task.completed
         };
         await Tasks.update(data, { where: { id } });
-        res.json(data)
+        res.json({ msg: "Editada exitosamente" });
     } catch (error) {
         
     };

@@ -19,7 +19,7 @@ const create = async (req, res) => {
 
     try {
         const user = await Users.create(newUser);
-        res.status(201).json(user);
+        res.status(201).json({ msg: "Registro exitoso" });
     } catch (error) {
         console.log(error);
     };
@@ -75,7 +75,7 @@ const recoverPassword = async (req, res) => {
         };
         await Users.update(data, { where: { id } });
         recoverPasswordEmail(data);
-        res.json(data);
+        res.json({ msg: "Correo enviado, porfavor verifique" });
     } catch (error) {
         console.log(error);
     };
@@ -103,7 +103,7 @@ const changePassword = async (req, res) => {
             token: ""
         };
         await Users.update(data, { where: { id } });
-        res.json(data);
+        res.json({ msg: "Cambiada con exito" });
     } catch (error) {
         console.log(error);  
     };
