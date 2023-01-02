@@ -15,7 +15,7 @@ const recoverPasswordEmail = async (data) => {
     });
 
     const info = await transport.sendMail({
-        from: "Tasks - Guarda tus tareas de manera segura",
+        from: "Tasks - Guarda tus tareas de manera segura ",
         to: `${email}`,
         subject: "Recuperar contraseña",
         text: "Has olvidado tu contraseña es hora de recuperarla",
