@@ -14,6 +14,7 @@ const create = async (req, res) => {
 
 const getAll = async (req, res) => {
     const userId = req.user.id;
+    
     try {
         const tasks = await Tasks.findOne({ where: { userId }, 
         attributes: ["id", "title", "description", "completed"]

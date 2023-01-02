@@ -19,7 +19,7 @@ const create = async (req, res) => {
 
     try {
         const user = await Users.create(newUser);
-        res.status(201).json(user);
+        res.status(201).json({ msg: "Registro exitoso" });
     } catch (error) {
         console.log(error);
     };
